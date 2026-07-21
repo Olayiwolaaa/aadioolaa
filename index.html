@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olayiwola Karaole, Software Engineer</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    --ink: #16130f;
+    --paper: #f4f0e6;
+    --paper-2: #ebe5d6;
+    --accent: #d94f1e;
+    --accent-2: #1f6f5c;
+    --line: #16130f;
+    --muted: #6b6256;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --mono: "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 60px;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 0 28px; }
+
+  /* Top bar */
+  .topbar {
+    border-bottom: 2px solid var(--line);
+    padding: 14px 0;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .topbar a { color: var(--ink); text-decoration: none; }
+  .topbar nav a { margin-left: 18px; }
+  .topbar nav a:hover { color: var(--accent); }
+
+  /* Hero */
+  header.hero { padding: 68px 0 44px; border-bottom: 2px solid var(--line); }
+  .hero .tag {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-size: clamp(44px, 8vw, 88px); line-height: 0.98; font-weight: 600;
+    letter-spacing: -0.02em; margin-bottom: 8px;
+  }
+  .hero h1 .sub { display: block; color: var(--muted); font-style: italic; font-size: clamp(22px, 3.6vw, 36px); font-weight: 400; margin-top: 12px; letter-spacing: 0; }
+  .hero p.lede { font-size: clamp(17px, 2vw, 20px); max-width: 620px; margin-top: 26px; color: #2b261f; }
+  .hero .meta { margin-top: 26px; font-family: var(--mono); font-size: 12.5px; letter-spacing: 0.04em; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 22px; }
+  .hero .meta a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+  .hero .meta a:hover { color: var(--accent); }
+
+  /* Section scaffold */
+  section { padding: 52px 0; border-bottom: 2px solid var(--line); }
+  .sec-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 30px; }
+  .sec-num { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: 0.1em; }
+  .sec-head h2 { font-size: clamp(24px, 3.4vw, 34px); font-weight: 600; letter-spacing: -0.01em; }
+
+  /* Stack grid */
+  .stack { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+  .stack .col h3 {
+    font-family: var(--mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--accent-2); border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-bottom: 10px;
+  }
+  .stack .col ul { list-style: none; }
+  .stack .col li { font-size: 15px; padding: 3px 0; }
+
+  /* Experience */
+  .job { display: grid; grid-template-columns: 150px minmax(0,1fr); gap: 24px; padding: 22px 0; border-top: 1px solid rgba(22,19,15,0.18); }
+  .job:first-of-type { border-top: none; }
+  .job .when { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.03em; padding-top: 4px; }
+  .job .role { font-size: 19px; font-weight: 600; }
+  .job .org { font-style: italic; color: var(--accent-2); margin-bottom: 8px; font-size: 15px; }
+  .job ul { margin: 6px 0 0 0; padding-left: 18px; }
+  .job li { font-size: 15px; margin-bottom: 4px; }
+
+  /* Featured project */
+  .project {
+    background: var(--paper-2); border: 2px solid var(--line);
+    padding: 28px; position: relative;
+  }
+  .project::before {
+    content: "FEATURED BUILD"; position: absolute; top: -11px; left: 22px;
+    background: var(--accent); color: var(--paper); font-family: var(--mono);
+    font-size: 10px; letter-spacing: 0.12em; padding: 3px 10px;
+  }
+  .project h3 { font-size: 26px; margin-bottom: 4px; }
+  .project .pstack { font-family: var(--mono); font-size: 12px; color: var(--accent-2); letter-spacing: 0.03em; margin-bottom: 14px; }
+  .project p { font-size: 15.5px; max-width: 640px; }
+  .project ul { margin: 14px 0 16px 18px; }
+  .project li { font-size: 15px; margin-bottom: 4px; }
+  .project .links a {
+    font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--ink); text-decoration: none; border: 1.5px solid var(--line); padding: 7px 14px; margin-right: 10px;
+    display: inline-block; transition: all 0.15s;
+  }
+  .project .links a:hover { background: var(--ink); color: var(--paper); }
+
+  .prose p { font-size: 16px; max-width: 640px; margin-bottom: 14px; }
+  .prose .note { font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+
+  footer { padding: 40px 0 20px; text-align: center; font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.05em; }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 680px) {
+    .stack { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .job { grid-template-columns: 1fr; gap: 6px; }
+    .job .when { padding-top: 0; }
+    .topbar nav { display: none; }
+  }
+  @media print {
+    body { padding-bottom: 0; }
+    .topbar nav { display: none; }
+    section, header.hero { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a href="#top">OK / SOFTWARE ENGINEER</a>
+      <nav>
+        <a href="#stack">Stack</a>
+        <a href="#work">Work</a>
+        <a href="#build">Build</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrap" id="top">
+    <header class="hero">
+      <div class="tag">Backend &amp; Full-Stack · Lagos, Nigeria</div>
+      <h1>Olayiwola Karaole<span class="sub">I build and ship backend systems.</span></h1>
+      <p class="lede">Software engineer focused on TypeScript and Node.js, with a background in Python/Django. I like owning problems end to end, from schema and endpoints through to the frontend and release.</p>
+      <div class="meta">
+        <span>APIs</span><span>Payments &amp; KYC</span><span>Real-time</span><span>CI/CD &amp; Cloud</span>
+        <a href="https://github.com/Olayiwolaaa" target="_blank" rel="noopener">github.com/Olayiwolaaa</a>
+        <a href="https://www.linkedin.com/in/olayiwolakaraole" target="_blank" rel="noopener">linkedin.com/in/olayiwolakaraole</a>
+      </div>
+    </header>
+
+    <section id="stack">
+      <div class="sec-head"><span class="sec-num">01</span><h2>What I work with</h2></div>
+      <div class="stack">
+        <div class="col">
+          <h3>Languages</h3>
+          <ul><li>TypeScript</li><li>JavaScript</li><li>Python</li><li>PHP</li></ul>
+        </div>
+        <div class="col">
+          <h3>Backend</h3>
+          <ul><li>Node.js</li><li>Bun · Hono</li><li>Django</li><li>REST APIs</li></ul>
+        </div>
+        <div class="col">
+          <h3>Frontend &amp; Data</h3>
+          <ul><li>React · Next.js</li><li>Tailwind CSS</li><li>PostgreSQL · Drizzle</li><li>MongoDB · MySQL</li></ul>
+        </div>
+        <div class="col">
+          <h3>DevOps &amp; Cloud</h3>
+          <ul><li>Docker</li><li>AWS · DigitalOcean</li><li>CI/CD · GitHub Actions</li><li>Nginx</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="sec-head"><span class="sec-num">02</span><h2>Where I've worked</h2></div>
+
+      <div class="job">
+        <div class="when">Feb 2025 — Present</div>
+        <div>
+          <div class="role">Software Engineer</div>
+          <div class="org">AKACIA Technology Solutions · Lagos</div>
+          <ul>
+            <li>Build and ship full-stack features with TypeScript and React.</li>
+            <li>Standardize shared UI components and API response handling for consistency and reuse.</li>
+            <li>Manage deployments and CI/CD workflows; improve front-end performance through query caching and asset optimization.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">2024 — Present</div>
+        <div>
+          <div class="role">Software Engineer, Backend &amp; Full-Stack</div>
+          <div class="org">Independent Product Development</div>
+          <ul>
+            <li>Designed and built a challenge-based platform end to end, owning schema, endpoints, and UI.</li>
+            <li>Integrated Paystack for wallet funding, withdrawals, and bank-account management.</li>
+            <li>Implemented async BVN verification and race-safe concurrency handling.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">Nov 2021 — Feb 2025</div>
+        <div>
+          <div class="role">Software Engineer</div>
+          <div class="org">Viralcntrl · Remote (UK)</div>
+          <ul>
+            <li>Built data-driven platforms for TikTok Shop creators and marketers using Python/Django.</li>
+            <li>Developed and integrated REST APIs connecting internal systems and third-party platforms.</li>
+            <li>Managed cloud infrastructure and deployments across AWS and DigitalOcean.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="when">2019 — Present</div>
+        <div>
+          <div class="role">Freelance Software Engineer</div>
+          <div class="org">Self-employed · Lagos</div>
+          <ul>
+            <li>Delivered backend systems and APIs for client projects using Python/Django and Node.js.</li>
+            <li>Handled deployment, environment setup, and ongoing maintenance for production applications.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="build">
+      <div class="sec-head"><span class="sec-num">03</span><h2>Something I built</h2></div>
+      <div class="project">
+        <h3>PotLock</h3>
+        <div class="pstack">TypeScript (Bun, Hono) · Drizzle / PostgreSQL · Next.js</div>
+        <p>A peer-to-peer skill-gaming platform where players stake on 1v1 challenges. Built end to end, from the API and data model to the player-facing web app.</p>
+        <ul>
+          <li>Wallet, payouts, and bank-account management via Paystack.</li>
+          <li>Async BVN / KYC verification with race-safe challenge joins.</li>
+          <li>Real-time notifications, dispute-evidence upload, and admin review.</li>
+        </ul>
+        <div class="links">
+          <a href="https://github.com/Olayiwolaaa/potlock" target="_blank" rel="noopener">Web repo →</a>
+          <a href="https://github.com/Olayiwolaaa/potlock-api" target="_blank" rel="noopener">API repo →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="sec-head"><span class="sec-num">04</span><h2>Get in touch</h2></div>
+      <div class="prose">
+        <p>Open to backend and full-stack roles. The fastest way to see how I work is my GitHub, where I'm shipping regularly.</p>
+        <p class="note">
+          Email — <a href="mailto:muizzkara91@gmail.com" style="color:var(--accent);text-decoration:none;">muizzkara91@gmail.com</a><br>
+          GitHub — <a href="https://github.com/Olayiwolaaa" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">github.com/Olayiwolaaa</a><br>
+          LinkedIn — <a href="https://www.linkedin.com/in/olayiwolakaraole" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;">linkedin.com/in/olayiwolakaraole</a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Olayiwola Karaole · Lagos, Nigeria · <a href="mailto:muizzkara91@gmail.com">muizzkara91@gmail.com</a></p>
+    </footer>
+  </div>
+</body>
+</html>
