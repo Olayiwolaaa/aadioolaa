@@ -1,4 +1,4 @@
-# Olayiwola Karaole
+# Olayiwola Karaole.
 
 > Backend & Full-Stack Software Engineer · Lagos, Nigeria
 
