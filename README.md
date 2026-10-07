@@ -66,11 +66,3 @@ A peer-to-peer skill-gaming platform where players stake on 1v1 challenges. Buil
 [Web Repository](https://github.com/Olayiwolaaa/potlock) · [API Repository](https://github.com/Olayiwolaaa/potlock-api)
 
 ---
-
-## 04 / Get in Touch
-
-Open to backend and full-stack roles. The fastest way to see how I work is my GitHub, where I'm shipping regularly.
-
-* **Email:** muizzkara91@gmail.com
-* **GitHub:** [github.com/Olayiwolaaa](https://github.com/Olayiwolaaa)
-* **LinkedIn:** [linkedin.com/in/olayiwolakaraole](https://www.linkedin.com/in/olayiwolakaraole)
